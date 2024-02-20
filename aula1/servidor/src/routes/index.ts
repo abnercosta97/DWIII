@@ -1,13 +1,8 @@
-import { Router, Request, Response } from "express";
-import cars from "./cars";
+import { Router} from "express";
+import user from "./user"
 
 const routes = Router();
 
-routes.get("/", function (req: Request, res: Response) {
-  res.json("oi");
-});
-
-routes.use("/carro", cars);
+routes.use("/usuario", user);
 
 export default routes;
-//
