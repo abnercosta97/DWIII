@@ -11,8 +11,16 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node ./src/index",
-    "dev": "ts-node-dev ./src/index"
+    "dev": "ts-node-dev ./src/index",
+    "test": "jest"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+    "<rootDir>/test/**/*.test.ts"
+    ]
+    },    
   "keywords": [],
   "author": "",
   "license": "ISC",
