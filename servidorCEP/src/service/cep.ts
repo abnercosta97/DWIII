@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Request, Response } from 'express';
 
 async function getCep(cep:string){
     try{
@@ -8,6 +9,18 @@ async function getCep(cep:string){
     }
     catch(e:any){
         return {message: e.message};
+    }
+}
+
+export async function obtercep(req:Request, res:Response){
+    const {cep} = req.body;
+    try{
+        const url = `https://viacep.com.br/ws/${cep}/json/`;
+        const {data} = await axios.get(url);
+        return res.json(data);
+    }
+    catch(e:any){
+        return res.json({ message: e.message });
     }
 }
 
