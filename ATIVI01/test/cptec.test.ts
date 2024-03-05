@@ -4,6 +4,7 @@ describe('Cptec teste', () => {
     it("Cidade Válida", async () => {
         const r = await new Cptec().listaCidades("canas");
         expect(r).toEqual(expect.stringContaining("<nome>Canas</nome>"));
+        //        expect(response.body.nome).toBe("Canas");
     });
 
     it("previsao", async () => {
