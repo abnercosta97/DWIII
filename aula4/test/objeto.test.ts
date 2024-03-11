@@ -1,7 +1,9 @@
 import somarArray from "../src/array";
 
 jest.mock("../src/Operacao", () => {
-    
+    return{
+        somar: jest.fn().mockImplementation( (a,b)=>a+b )
+    }
 });
 
 it("Somar array", () => {

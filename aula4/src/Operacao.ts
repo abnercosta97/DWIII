@@ -1,4 +1,4 @@
-export default class Operacao {
+class Operacao {
   somar(a: number, b: number) {
     return a + b;
   }
@@ -6,3 +6,5 @@ export default class Operacao {
     return nro + 1;
   }
 }
+
+export default new Operacao();
