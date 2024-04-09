@@ -19,7 +19,8 @@ export interface MesoProps {
 
 export interface ContextProps {
     regioes: RegiaoProps[];
-    //ufs: UfProps[];
+    ufs: UfProps[];
+    loadUfs: (id: number) => void;
     //mesos: MesoProps[];
     //setRegioes: (regioes: RegiaoProps[]) => void;
     //setUfs: (ufs: UfProps[]) => void;

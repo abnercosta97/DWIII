@@ -1,26 +1,10 @@
-import styled from "styled-components";
-import Block from "./components/Block";
-import Title from "./components/Title";
-import Item from "./components/Item";
+import Principal from "./pages/Principal";
+import { Provedor } from "./contexts/Contexto";
 
 export default function App() {
   return (
-    <WrapperSld>
-      <Block>
-        <Title>Regiões</Title>
-        <Item>Centro-oeste</Item>
-        <Item>Nordeste</Item>
-      </Block>
-      <Block>
-        <Title>Estados</Title>
-      </Block>
-      <Block>
-        <Title>Mesorregiões</Title>
-      </Block>
-    </WrapperSld>
+    <Provedor>
+      <Principal />
+    </Provedor>
   )
 }
-
-const WrapperSld = styled.div`
-  display: flex;
-`
