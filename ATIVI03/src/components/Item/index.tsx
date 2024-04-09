@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export default function Item({ children }: any) {
-  return <Sld>{children}</Sld>;
+export default function Item({ children, onClick }: React.PropsWithChildren<Props>) {
+  return <Sld onClick={onClick}>{children}</Sld>;
 }
 
 const Sld = styled.div`
@@ -14,3 +14,7 @@ const Sld = styled.div`
     color: orange;
   }
 `;
+
+interface Props {
+  onClick?: () => void;
+}

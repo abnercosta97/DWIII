@@ -13,7 +13,6 @@ export function Provedor({ children }: any) {
   },[]);
 
   const loadUfs = async (id: number) => {
-    console.log(id);
     const data = await ibge.getUfPorRegiao(id);
     setUfs(data);
   }

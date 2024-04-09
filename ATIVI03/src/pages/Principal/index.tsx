@@ -2,14 +2,13 @@ import styled from "styled-components";
 import Block from "../../components/Block";
 import Title from "../../components/Title";
 import Regiao from "../../components/Regiao";
+import Estado from "../../components/Estado";
 
 export default function Principal() {
   return (
     <WrapperSld>
       <Regiao />
-      <Block>
-        <Title>Estados</Title>
-      </Block>
+      <Estado />
       <Block>
         <Title>Mesorregiões</Title>
       </Block>

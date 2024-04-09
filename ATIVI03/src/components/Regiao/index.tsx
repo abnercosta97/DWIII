@@ -1,15 +1,15 @@
 import Block from "../../components/Block";
 import Item from "../../components/Item";
 import Title from "../../components/Title";
-import { useContext } from "react";
-import { ctx } from "../../contexts/Contexto";
 import Carregando from "../Carregando";
+import { RegiaoProps } from "../../types";
+import useIbge from "../../hooks/useIbge";
 
 export default function Regiao() {
-  const { regioes, loadUfs } = useContext(ctx);
+  const { regioes, loadUfs } = useIbge();
 
-  const itens = regioes.map((regiao: any) => (
-    <Item key={regiao.id} onClick={() => console.log(regiao.id)}>
+  const itens = regioes.map((regiao: RegiaoProps) => (
+    <Item key={regiao.id} onClick={() => loadUfs(regiao.id)}>
       {regiao.nome}
     </Item>
   ));
