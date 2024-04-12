@@ -6,10 +6,10 @@ import { UfProps } from "../../types";
 import useIbge from "../../hooks/useIbge";
 
 export default function Estado() {
-  const { ufs } = useIbge();
+  const { ufs, loadingUfs, loadMesos } = useIbge();
 
   const itens = ufs.map((uf: UfProps) => (
-    <Item key={uf.id} onClick={() => console.log(uf.id)}>
+    <Item key={uf.id} onClick={() => loadMesos(uf.sigla)}>
       {uf.nome}
     </Item>
   ));
@@ -17,7 +17,7 @@ export default function Estado() {
   return (
     <Block>
       <Title>Estados</Title>
-      {ufs.length !== 0 ? itens : <Carregando />}
+      {loadingUfs ? <Carregando />: itens }
     </Block>
   );
 }

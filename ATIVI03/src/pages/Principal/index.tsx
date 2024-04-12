@@ -1,17 +1,14 @@
 import styled from "styled-components";
-import Block from "../../components/Block";
-import Title from "../../components/Title";
 import Regiao from "../../components/Regiao";
 import Estado from "../../components/Estado";
+import Mesorregiao from "../../components/Mesorregiao";
 
 export default function Principal() {
   return (
     <WrapperSld>
       <Regiao />
       <Estado />
-      <Block>
-        <Title>Mesorregiões</Title>
-      </Block>
+      <Mesorregiao />
     </WrapperSld>
   );
 }

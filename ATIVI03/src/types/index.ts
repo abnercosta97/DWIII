@@ -18,11 +18,11 @@ export interface MesoProps {
 }
 
 export interface ContextProps {
-    regioes: RegiaoProps[];
-    ufs: UfProps[];
-    loadUfs: (id: number) => void;
-    //mesos: MesoProps[];
-    //setRegioes: (regioes: RegiaoProps[]) => void;
-    //setUfs: (ufs: UfProps[]) => void;
-    //setMesos: (mesos: MesoProps[]) => void;
-    }
+  regioes: RegiaoProps[];
+  ufs: UfProps[];
+  loadUfs: (id: number) => void;
+  mesorregioes: MesoProps[];
+  loadMesos: (sigla: string) => void;
+  loadingUfs: boolean;
+  loadingMesos: boolean;
+}
