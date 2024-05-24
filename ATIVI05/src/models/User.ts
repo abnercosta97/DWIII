@@ -16,6 +16,7 @@ const UserSchema = new Schema(
     password: {
       type: String,
       trim: true,
+      select: false,
       required: [true, "Senha é obrigatória"],
       minlength: [6, "Senha deve ter no mínimo 6 caracteres"],
       maxlength: [10, "Senha deve ter no máximo 10 caracteres"],
@@ -32,7 +33,7 @@ const UserSchema = new Schema(
         ret.id = ret._id;
         delete ret._id;
         delete ret.__v;
-        delete ret.password; // Excluir senha da resposta JSON
+        return ret;
       },
     },
   }
