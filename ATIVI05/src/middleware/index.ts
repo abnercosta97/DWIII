@@ -38,8 +38,8 @@ export const validadeAcess = (
 };
 
 export const checkAdm = (_: Request, res: Response, next: NextFunction) => {
-  const { role } = res.locals;
-  if (role == "adm") {
+  const { profile } = res.locals;
+  if (profile == "adm") {
     next();
   } else {
     res.status(401).send({ error: "Acesso negado" });

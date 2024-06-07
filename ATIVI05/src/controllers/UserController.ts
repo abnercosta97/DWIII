@@ -23,10 +23,10 @@ class UserController {
   }
 
   public async create(req: Request, res: Response): Promise<void> {
-    const { mail, password, role } = req.body;
+    const { mail, password, profile } = req.body;
 
     try {
-      const newUser = new User({ mail, password, role });
+      const newUser = new User({ mail, password, profile });
       const response = await newUser.save();
       const userObject = response.toObject();
       res.json({ ...userObject, token: tokenize(userObject) });
@@ -108,12 +108,12 @@ class UserController {
   }
 
   public async updateProfile(req: Request, res: Response): Promise<void> {
-    const { id, role } = req.body;
-    if (role === "adm" || role === "user") {
+    const { id, profile } = req.body;
+    if (profile === "adm" || profile === "user") {
       try {
         const response = await User.findByIdAndUpdate(
           id,
-          { role },
+          { profile },
           { new: true, runValidators: true, context: "query" }
         ).exec();
         if (response) {

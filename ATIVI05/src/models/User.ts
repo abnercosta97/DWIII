@@ -21,7 +21,7 @@ const UserSchema = new Schema(
       minlength: [6, "Senha deve ter no mínimo 6 caracteres"],
       maxlength: [10, "Senha deve ter no máximo 10 caracteres"],
     },
-    role: {
+    profile: {
       type: String,
       enum: ["user", "adm"],
       default: "user",
